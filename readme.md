@@ -5,8 +5,8 @@ and Java.
 
 My submission is in 3 parts:
 1. the code repo and the `readme` file for setting up the project
-2. the [discussion.md](https:test.com) file where I discuss what I did in the project
-3. the postman collection that can be accessed [here](postman.com)
+2. the [discussion.md](https://github.com/Oluwatodimu/banking-service/blob/main/discussion.md) file where I discuss what I did in the project
+3. the postman collection that can be accessed [here](https://www.postman.com/lively-firefly-891824/workspace/my-public-workspace/request/18629385-07dbd1e2-92e5-4493-9b0f-e073a06ce8a7)
 
 This readme file will show you how to do setup this project, start the application and run the required tests.
 
@@ -38,5 +38,5 @@ After doing this you can run the application.
 
 
 ### Testing the application APIs
-After you have successfully started the application, you can use this [link](postman.com) to
+After you have successfully started the application, you can use this [link](https://www.postman.com/lively-firefly-891824/workspace/my-public-workspace/request/18629385-07dbd1e2-92e5-4493-9b0f-e073a06ce8a7) to
 take you to the postman collection for testing the APIs.

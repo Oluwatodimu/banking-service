@@ -1,0 +1,49 @@
+CREATE TABLE currency (
+    `id` BINARY(16) NOT NULL UNIQUE,
+    `name` VARCHAR(64) NOT NULL,
+    `symbol` VARCHAR(30) NOT NULL UNIQUE,
+    `enabled` BIT NOT NULL,
+    created_by VARCHAR(255),
+    creation_date DATETIME,
+    last_modified_by VARCHAR(255),
+    last_modified_date DATETIME,
+
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE user_transaction (
+    id BINARY(16) NOT NULL UNIQUE,
+    amount DECIMAL(64) NOT NULL,
+    `type` VARCHAR(15) NOT NULL,
+    `purpose` VARCHAR(35) NOT NULL,
+    `account_id` BINARY(16) NOT NULL,
+    `reference` BINARY(16) NOT NULL UNIQUE,
+    `status` VARCHAR(30) NOT NULL,
+    `description` VARCHAR(255),
+    `sender_account` VARCHAR(20) NOT NULL,
+    `receiver_account` VARCHAR(20) NOT NULL,
+    created_by VARCHAR(255),
+    creation_date DATETIME,
+    last_modified_by VARCHAR(255),
+    last_modified_date DATETIME,
+
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE account (
+    id BINARY(16) NOT NULL UNIQUE,
+    `available_balance` DECIMAL(64) NOT NULL,
+    `reserved_balance` VARCHAR(30) NOT NULL,
+    `locked` BIT NOT NULL,
+    `status` VARCHAR(20) NOT NULL,
+    `type` VARCHAR(20) NOT NULL,
+    `currency_id` BINARY(16) NOT NULL,
+    `user_id` BINARY(16) NOT NULL,
+    `account_number` VARCHAR(20) NOT NULL UNIQUE,
+    created_by VARCHAR(255),
+    creation_date DATETIME,
+    last_modified_by VARCHAR(255),
+    last_modified_date DATETIME,
+
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

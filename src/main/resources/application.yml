@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: logistics-service
+
+  jackson:
+    default-property-inclusion: non_null
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/banking_service_backend?createDatabaseIfNotExist=true
+    username: root
+    password: Zawarudo12!@
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+      connection-test-query: SELECT 1
+
+jwt:
+  key: jxgEQeXHuPq8VdbyYFNkANdudQ53YUn4bvtbyunimim
+
+rate-limiter:
+  max-number-of-requests: 100
+  time-period-for-rate-limit: 2

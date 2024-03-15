@@ -57,29 +57,30 @@ In this section, I will be discussing how I achieved all the requirements:
 requirement in and ERD diagram, for a better view of the models and their relationships. 
 In addition to the 3 required models, I created a currency model to handle the denominations of the accounts.
 
+<img width="848" alt="Screen Shot 2024-03-15 at 9 43 49 AM" src="https://github.com/Oluwatodimu/banking-service/assets/81085914/b205b4ac-2538-42e1-b194-14272e931e0d">
 
-3. The RESTful APIs for the application were built using spring boot. I adhered to the RESTful guidelines for building the 
+4. The RESTful APIs for the application were built using spring boot. I adhered to the RESTful guidelines for building the 
 APIs, including the use of a layered system where each layer interacts with the adjacent layer. I used the repository, service
 controller layer, and ensured that no business logic was don in the controller layer. This made it easier to write tests, and 
 also focus the testing to the service layer. I also used Jwt stateless tokens for authentication, so no need to manually store
 any tokens between requests.
 
 
-4. Basic input validation was done in the controller layer, and was done for all request data in the application(request bodies,
+5. Basic input validation was done in the controller layer, and was done for all request data in the application(request bodies,
 path variables and request params). Proper exception handling was also done to ensure that exceptions were properly handled when
 some of these validations failed.
 
 
-5. I ensured transactional integrity by annotating all the write db operations with `@Transactional` in order to rollback anything
+6. I ensured transactional integrity by annotating all the write db operations with `@Transactional` in order to rollback anything
 that had been done to the db before an error occurred. All the other integrity concerns were handled by underlying mechanisms in the
 spring boot application.
 
 
-6. Unit tests were written for all the operations supported by the system, and they can be ran using `mvn test`. The test implementations 
+7. Unit tests were written for all the operations supported by the system, and they can be ran using `mvn test`. The test implementations 
 can be seen in the code repo for further reference.
 
 
-7. For Logging, SLF4J (Simple Logging Facade for Java) is an abstraction layer for various logging frameworks in the Java ecosystem. I used this in
+8. For Logging, SLF4J (Simple Logging Facade for Java) is an abstraction layer for various logging frameworks in the Java ecosystem. I used this in
 my application, in order to use the logging capabilities without without coupling the code directly to a specific logging framework. I logged all the
 controller layer actions in the application.
 
